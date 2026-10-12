@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nugget — Doomscroll Smarter. Learn Anything on the Tip of Your Thumb</title>
-  <meta name="description" content="Nugget replaces mindless doomscrolling with bite-sized, visual micro-learning nuggets. Discover science, code, psychology, and philosophy in 45-second thumb-friendly scrolls.">
-  <meta name="keywords" content="microlearning, bite-sized learning, anti-doomscrolling, educational feed, visual concepts, flashcards">
-  
+  <meta name="description"
+    content="Nugget replaces mindless doomscrolling with bite-sized, visual micro-learning nuggets. Discover science, code, psychology, and philosophy in 45-second thumb-friendly scrolls.">
+  <meta name="keywords"
+    content="microlearning, bite-sized learning, anti-doomscrolling, educational feed, visual concepts, flashcards">
+
   <!-- Modern Google Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="dark-theme">
   <!-- Ambient glowing backdrop orbs -->
   <div class="ambient-glow orb-1"></div>
@@ -41,18 +47,16 @@
       <!-- Compulsory Search Bar -->
       <div class="taskbar-search-container">
         <div class="search-input-wrapper">
-          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input 
-            type="text" 
-            id="globalTopicSearch" 
-            placeholder="Search any concept, quantum physics, mental models, code..." 
-            autocomplete="off"
-            aria-label="Search learning topics and concepts"
-          />
-          <button class="clear-search-btn" id="clearSearchBtn" aria-label="Clear Search" style="display: none;">✕</button>
+          <input type="text" id="globalTopicSearch"
+            placeholder="Search any concept, quantum physics, mental models, code..." autocomplete="off"
+            aria-label="Search learning topics and concepts" />
+          <button class="clear-search-btn" id="clearSearchBtn" aria-label="Clear Search"
+            style="display: none;">✕</button>
           <div class="search-kbd-shortcut"><kbd>/</kbd></div>
         </div>
 
@@ -71,7 +75,8 @@
 
       <div class="taskbar-right">
         <!-- Live Neon Database Status & Inspector Trigger -->
-        <button class="db-status-pill" id="dbStatusPill" title="Click to view live Neon PostgreSQL Users & Data" aria-label="Open Neon Database Inspector">
+        <button class="db-status-pill" id="dbStatusPill" title="Click to view live Neon PostgreSQL Users & Data"
+          aria-label="Open Neon Database Inspector">
           <span class="db-dot"></span>
           <span class="db-text" id="dbStatusText">Neon DB</span>
           <span class="db-view-badge">View DB ↗</span>
@@ -86,7 +91,8 @@
 
         <!-- Create Nugget (Creators) -->
         <button class="btn-primary create-btn" id="openCreateModalBtn" aria-label="Post a new Nugget">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+            stroke-linejoin="round" class="btn-icon">
             <line x1="12" y1="5" x2="12" y2="19"></line>
             <line x1="5" y1="12" x2="19" y2="12"></line>
           </svg>
@@ -94,18 +100,22 @@
         </button>
 
         <!-- Saved / Brain Vault Button -->
-        <button class="icon-nav-btn" id="openSavedDrawerBtn" title="Saved Nuggets / Brain Vault" aria-label="Open Saved Nuggets">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button class="icon-nav-btn" id="openSavedDrawerBtn" title="Saved Nuggets / Brain Vault"
+          aria-label="Open Saved Nuggets">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
             <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
           </svg>
           <span class="saved-counter-badge" id="savedCounterBadge">0</span>
         </button>
 
         <!-- User / Auth Profile Trigger -->
-        <div class="user-profile-widget" id="userProfileWidget">
+        <div class="user-profile-widget" id="userProfile">
           <button class="avatar-btn" id="avatarMenuBtn" aria-label="User Account Menu">
             <div class="avatar-ring">
-              <img id="headerUserAvatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Avatar" class="user-avatar-img">
+              <img id="headerUserAvatar"
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
+                alt="Avatar" class="user-avatar-img">
             </div>
             <span class="user-status-dot online"></span>
           </button>
@@ -118,15 +128,26 @@
             </div>
             <div class="dropdown-divider"></div>
             <button class="dropdown-item" id="switchAccountBtn">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
               <span>Switch or Log In</span>
             </button>
             <button class="dropdown-item" id="modeToggleBtn">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
               <span>Feed View: Stream / Reel</span>
             </button>
             <button class="dropdown-item logout" id="logoutBtn">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
               <span>Log Out / Reset Guest</span>
             </button>
           </div>
@@ -188,7 +209,9 @@
         <div class="sidebar-card user-mini-card">
           <div class="mini-card-bg"></div>
           <div class="mini-card-content">
-            <img id="sidebarAvatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="User avatar" class="mini-avatar">
+            <img id="sidebarAvatar"
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
+              alt="User avatar" class="mini-avatar">
             <h2 class="mini-username" id="sidebarUserName">Guest Explorer</h2>
             <p class="mini-user-handle" id="sidebarUserHandle">@guest_learner</p>
             <div class="stat-pills-row">
@@ -214,7 +237,8 @@
             <span class="tracker-badge">Anti-Doomscroll Meter</span>
             <span class="time-saved">⏱️ 38m Saved</span>
           </div>
-          <p class="tracker-desc">You turned 38 minutes of mindless scrolling into <strong>14 permanent concepts</strong> learned today.</p>
+          <p class="tracker-desc">You turned 38 minutes of mindless scrolling into <strong>14 permanent
+              concepts</strong> learned today.</p>
           <div class="progress-bar-wrap">
             <div class="progress-bar-fill" style="width: 76%;"></div>
           </div>
@@ -267,35 +291,40 @@
             <!-- Pre-populated concept stories -->
             <div class="story-circle-item" data-story-id="s1">
               <div class="story-ring unread">
-                <img src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=150&q=80" alt="Brain Story" class="story-img">
+                <img src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=150&q=80"
+                  alt="Brain Story" class="story-img">
               </div>
               <span class="story-label">Synapses</span>
             </div>
 
             <div class="story-circle-item" data-story-id="s2">
               <div class="story-ring unread">
-                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=150&q=80" alt="Space Story" class="story-img">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=150&q=80"
+                  alt="Space Story" class="story-img">
               </div>
               <span class="story-label">Wormholes</span>
             </div>
 
             <div class="story-circle-item" data-story-id="s3">
               <div class="story-ring unread">
-                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=150&q=80" alt="Code Story" class="story-img">
+                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=150&q=80"
+                  alt="Code Story" class="story-img">
               </div>
               <span class="story-label">Clean Code</span>
             </div>
 
             <div class="story-circle-item" data-story-id="s4">
               <div class="story-ring unread">
-                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=150&q=80" alt="Design Story" class="story-img">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=150&q=80"
+                  alt="Design Story" class="story-img">
               </div>
               <span class="story-label">Golden Ratio</span>
             </div>
 
             <div class="story-circle-item" data-story-id="s5">
               <div class="story-ring unread">
-                <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=150&q=80" alt="Mental Model Story" class="story-img">
+                <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=150&q=80"
+                  alt="Mental Model Story" class="story-img">
               </div>
               <span class="story-label">First Principle</span>
             </div>
@@ -323,7 +352,8 @@
         <div class="empty-feed-card" id="emptyFeedCard" style="display: none;">
           <div class="empty-icon">🔍</div>
           <h3>No Nuggets Found</h3>
-          <p id="emptyFeedMessage">Try searching for other mental models, quantum physics, or create the first nugget on this topic!</p>
+          <p id="emptyFeedMessage">Try searching for other mental models, quantum physics, or create the first nugget on
+            this topic!</p>
           <button class="btn-primary" id="resetFiltersBtn">Reset Topic Filters</button>
         </div>
 
@@ -351,17 +381,20 @@
         <div class="sidebar-card daily-challenge-card">
           <div class="challenge-icon-tag">⚡ 60-Second Lightning Test</div>
           <h4>The Hedonic Treadmill</h4>
-          <p>Why winning the lottery and losing a job often result in the exact same baseline happiness after 1 year?</p>
+          <p>Why winning the lottery and losing a job often result in the exact same baseline happiness after 1 year?
+          </p>
           <button class="challenge-action-btn" id="startMiniChallengeBtn">Tap to Reveal Insight →</button>
           <div class="challenge-answer-reveal" id="challengeAnswerReveal" style="display: none;">
-            <p><strong>Adaptation:</strong> Humans return quickly to a stable set-point of emotional happiness regardless of positive or negative external shocks.</p>
+            <p><strong>Adaptation:</strong> Humans return quickly to a stable set-point of emotional happiness
+              regardless of positive or negative external shocks.</p>
           </div>
         </div>
 
         <!-- Tip of the Thumb Manifesto -->
         <div class="sidebar-card manifesto-card">
           <div class="manifesto-badge">The Nugget Philosophy</div>
-          <p>"Every time you want to open social media to zone out, open Nugget. One thumb flick = One permanent life lesson."</p>
+          <p>"Every time you want to open social media to zone out, open Nugget. One thumb flick = One permanent life
+            lesson."</p>
           <div class="manifesto-footer">
             <span>Built for curious minds 💡</span>
           </div>
@@ -372,22 +405,33 @@
     <!-- Bottom Mobile Navigation Bar (For Thumb Friendly Experience on mobile/touch) -->
     <nav class="mobile-bottom-bar" id="mobileBottomBar">
       <button class="mobile-nav-btn active" id="mobileHomeBtn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
         <span>Feed</span>
       </button>
       <button class="mobile-nav-btn" id="mobileSearchBtn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
         <span>Explore</span>
       </button>
       <button class="mobile-nav-btn create-mobile" id="mobileCreateBtn">
         <div class="mobile-plus-circle">+</div>
       </button>
       <button class="mobile-nav-btn" id="mobileSavedBtn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+        </svg>
         <span>Vault</span>
       </button>
       <button class="mobile-nav-btn" id="mobileProfileBtn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
         <span>Profile</span>
       </button>
     </nav>
@@ -408,7 +452,8 @@
             <span class="auth-logo-text">nugget<span class="brand-dot">.</span></span>
           </div>
           <h1 class="auth-title">Stop Doomscrolling. Start Micro-Mastery.</h1>
-          <p class="auth-subtitle">Learn astrophysics, system design, or psychology with every thumb swipe. Join 120,000+ conscious thinkers.</p>
+          <p class="auth-subtitle">Learn astrophysics, system design, or psychology with every thumb swipe. Join
+            120,000+ conscious thinkers.</p>
         </div>
 
         <!-- Auth Tabs: Login vs Register -->
@@ -422,8 +467,12 @@
           <div class="form-group">
             <label for="loginEmail">Email or Username</label>
             <div class="input-with-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              <input type="text" id="loginEmail" placeholder="e.g. thinker@nugget.io" required value="curious_mind@nugget.io">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              <input type="text" id="loginEmail" placeholder="e.g. thinker@nugget.io" required
+                value="curious_mind@nugget.io">
             </div>
           </div>
 
@@ -433,7 +482,10 @@
               <a href="#" class="forgot-link" id="demoFillBtn">Fill Demo Credentials</a>
             </div>
             <div class="input-with-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
               <input type="password" id="loginPassword" placeholder="••••••••" required value="mastery2026">
             </div>
           </div>
@@ -456,7 +508,10 @@
           <div class="form-group">
             <label for="regFullName">Full Name</label>
             <div class="input-with-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
               <input type="text" id="regFullName" placeholder="e.g. Maya Lin" required>
             </div>
           </div>
@@ -472,7 +527,10 @@
           <div class="form-group">
             <label for="regEmail">Email Address</label>
             <div class="input-with-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
               <input type="email" id="regEmail" placeholder="your@email.com" required>
             </div>
           </div>
@@ -480,7 +538,10 @@
           <div class="form-group">
             <label for="regPassword">Create Password</label>
             <div class="input-with-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
               <input type="password" id="regPassword" placeholder="Minimum 6 characters" required>
             </div>
           </div>
@@ -507,7 +568,8 @@
           <span class="guest-badge">MANDATORY OPTION</span>
         </button>
 
-        <p class="auth-privacy-note">By continuing, you pledge to spend at least 2 minutes learning instead of scrolling cat videos. 🧠</p>
+        <p class="auth-privacy-note">By continuing, you pledge to spend at least 2 minutes learning instead of scrolling
+          cat videos. 🧠</p>
       </div>
     </div>
   </div>
@@ -529,7 +591,8 @@
           <div class="create-form-fields">
             <div class="form-group">
               <label for="nuggetTitle">Concept Title *</label>
-              <input type="text" id="nuggetTitle" placeholder="e.g. Heisenberg Uncertainty Principle in 45 Seconds" required>
+              <input type="text" id="nuggetTitle" placeholder="e.g. Heisenberg Uncertainty Principle in 45 Seconds"
+                required>
             </div>
 
             <div class="form-row-2">
@@ -555,13 +618,17 @@
 
             <div class="form-group">
               <label for="nuggetCoreConcept">The Core Concept (Keep it punchy & clear) *</label>
-              <textarea id="nuggetCoreConcept" rows="3" placeholder="Explain the intuition simply: What is it, why does it matter, and how does it change how we see the world?" required></textarea>
+              <textarea id="nuggetCoreConcept" rows="3"
+                placeholder="Explain the intuition simply: What is it, why does it matter, and how does it change how we see the world?"
+                required></textarea>
             </div>
 
             <div class="form-group">
               <label>3 Bullet Takeaways (The Bite)</label>
-              <input type="text" id="nuggetTakeaway1" placeholder="• Bullet 1: Core mechanism" class="bullet-input" required>
-              <input type="text" id="nuggetTakeaway2" placeholder="• Bullet 2: Real world application" class="bullet-input">
+              <input type="text" id="nuggetTakeaway1" placeholder="• Bullet 1: Core mechanism" class="bullet-input"
+                required>
+              <input type="text" id="nuggetTakeaway2" placeholder="• Bullet 2: Real world application"
+                class="bullet-input">
               <input type="text" id="nuggetTakeaway3" placeholder="• Bullet 3: Mind-bending twist" class="bullet-input">
             </div>
 
@@ -594,7 +661,8 @@
                 <span>🎯 Attach a Thumb Quiz (Boosts retention by 80%)</span>
               </div>
               <div class="form-group">
-                <input type="text" id="nuggetQuizQ" placeholder="Quiz Question: e.g. Can you measure both speed and position with infinite precision?">
+                <input type="text" id="nuggetQuizQ"
+                  placeholder="Quiz Question: e.g. Can you measure both speed and position with infinite precision?">
               </div>
               <div class="form-row-2">
                 <input type="text" id="nuggetQuizOpt1" placeholder="Option A: Yes, with laser tech">
@@ -684,7 +752,8 @@
       <div class="story-viewer-body" id="storyViewerBody">
         <div class="story-card-graphic" id="storyGraphic"></div>
         <h2 id="storyTitle">The Fermi Paradox</h2>
-        <p id="storyContent">There are 100 billion stars in the Milky Way alone, many older than our sun. Why haven't we heard from anyone?</p>
+        <p id="storyContent">There are 100 billion stars in the Milky Way alone, many older than our sun. Why haven't we
+          heard from anyone?</p>
       </div>
 
       <div class="story-viewer-footer">
@@ -725,7 +794,8 @@
       </div>
 
       <div class="db-viewer-tabs">
-        <button class="db-tab-btn active" id="dbTabUsersBtn">👥 Users & Credentials (<span id="dbUsersCount">0</span>)</button>
+        <button class="db-tab-btn active" id="dbTabUsersBtn">👥 Users & Credentials (<span
+            id="dbUsersCount">0</span>)</button>
         <button class="db-tab-btn" id="dbTabNuggetsBtn">💡 Nuggets (<span id="dbNuggetsCount">0</span>)</button>
       </div>
 
@@ -776,4 +846,5 @@
 
   <script src="app.js"></script>
 </body>
+
 </html>
